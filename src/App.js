@@ -1,11 +1,22 @@
 import React from 'react';
+import Footer from './components/Footer';
+
+import Header from './components/Header';
+import Posts from './components/Posts';
+
+import GlobalStyle from './styles/global';
 
 
 export default class App extends React.Component {
 
 	render() {
 		return (
-			<h1>Na Blog - React Class Component</h1>
+			<>
+				<Header />
+				<Posts />
+				<Footer />
+				<GlobalStyle />
+			</>
 		)
 	}
 }
