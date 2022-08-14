@@ -10,6 +10,6 @@ export default createGlobalStyle`
 	body {
 		font-family: "Roboto", sans-serif;
 		background-color: ${({ theme }) => theme.backgroundColor};
-		color: '#fff'
+		color: ${({ theme }) => theme.textColor};
 	}
 `;

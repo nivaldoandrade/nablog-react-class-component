@@ -3,5 +3,8 @@ import common from './common';
 export default {
 	...common,
 	backgroundColor: '#fff',
-	color: '#111',
+	textColor: '#111',
+	headerBackgroundColor: '#aaa',
+	footerBackgroundColor: '#aaa',
+	postBackgroundColor: '#1012',
 }

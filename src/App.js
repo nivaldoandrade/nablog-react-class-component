@@ -13,7 +13,7 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-			<ThemeProvider theme={themes.light}>
+			<ThemeProvider theme={themes.dark}>
 				<Header />
 				<Posts />
 				<Footer />

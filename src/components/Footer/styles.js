@@ -7,8 +7,7 @@ export const Container = styled.footer`
 	margin: 16px 4px 0;
 	padding: 20px;
 	border-radius: 5px;
-	background-color: #111;
-	color: white;
+	background-color: ${({ theme }) => theme.footerBackgroundColor};
 `;
 
 export const Info = styled.strong`

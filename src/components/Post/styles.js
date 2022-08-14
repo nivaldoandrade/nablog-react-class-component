@@ -4,8 +4,7 @@ export const Container = styled.div`
 	padding: 16px;
 	margin: 0 4px;
 	border-radius: 5px;
-	background-color: #555;
-	color: white;
+	background-color: ${({ theme }) => theme.postBackgroundColor};
 
 	& + div {
 		margin-top: 8px;
