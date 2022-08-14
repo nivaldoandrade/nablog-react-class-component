@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ToggleTheme from '../ToogleTheme';
+import ToggleTheme from '../ToggleTheme';
 
 import { Container, Info} from './styles';
 
