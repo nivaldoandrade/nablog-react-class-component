@@ -1,5 +1,5 @@
 import React from 'react';
-import ToggleTheme from '../ToogleTheme';
+import ToggleTheme from '../ToggleTheme';
 
 import { Container, Title, Icon } from './styles';
 
