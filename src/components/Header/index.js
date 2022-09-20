@@ -4,27 +4,23 @@ import ToggleTheme from '../ToggleTheme';
 import { Container, Title, Icon } from './styles';
 
 export default class Header extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			teste: this.props.title,
-			TesteDoTeste: true
-		}
-
-		this.handleChangeState = this.handleChangeState.bind(this);
+	state = {
+		title: this.props.title,
+		TesteDoTeste: true
 	}
 
-	handleChangeState() {
+	handleChangeState = () => {
 		console.log({stateAfter: this.state});
 
-		this.setState({teste: 'NaBlogChange'});
+		this.setState({title: 'NaBlogChange'});
 	};
 
 	render() {
+		const {title} = this.state;
+
 		return (
 			<Container>
-				<Title>{this.state.teste}</Title>
+				<Title>{title}</Title>
 				<ToggleTheme />
 				<button onClick={this.handleChangeState}>Mudar o titulo</button>
 			</Container>
