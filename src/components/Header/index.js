@@ -10,14 +10,15 @@ export default class Header extends React.Component {
 	}
 
 	handleChangeState = () => {
-		console.log({stateAfter: this.state});
-
-		this.setState({title: 'NaBlogChange'});
+		console.log('handleChangeStae');
+		this.forceUpdate();
+		// this.setState({title: 'NaBlogChange'});
 	};
 
 	render() {
 		const {title} = this.state;
 
+		console.log('<Header /> rendered')
 		return (
 			<Container>
 				<Title>{title}</Title>
