@@ -13,7 +13,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<ThemeContextProvider>
-					<Header />
+					<Header title="NaBlogProps"/>
 					<Posts />
 					<Footer />
 					<GlobalStyle />
