@@ -3,7 +3,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Posts from './components/Posts';
 
-import { ThemeContextProvider, ThemeContext } from './contexts/ThemeContext';
+import ThemeContextProvider from './contexts/ThemeContext';
 
 import GlobalStyle from './styles/global';
 
@@ -21,24 +21,10 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<ThemeContextProvider>
-				<ThemeContext.Consumer>
-					{({theme}) => (
-						<>
-							<Header title="NaBlogProps"/>
-							{theme === 'dark' 
-								? <Posts/> 
-								: (
-										<>
-											<br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br />	<br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br />	<br /> <br /><br /> <br /><br /> <br /><br /> <br /><br /> <br />	
-										</>
-									)
-							}
-							<Footer />
-							<GlobalStyle />
-						</>
-					)}
-				</ThemeContext.Consumer>
-					
+					<Header title="NaBlogProps"/>
+					<Posts />
+					<Footer />
+					<GlobalStyle />
 			</ThemeContextProvider>
 		)
 	}
