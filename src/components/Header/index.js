@@ -36,6 +36,7 @@ export default class Header extends React.Component {
 
 		return (
 			<Container>
+				{undefined.map(item => item)}
 				<Title>{title}</Title>
 				<ToggleTheme />
 				<button onClick={this.handleChangeState}>Mudar o titulo</button>
