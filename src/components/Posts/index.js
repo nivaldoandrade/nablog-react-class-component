@@ -22,7 +22,23 @@ const ListPosts = [
 	}
 ]
 
+//componentWillUnmount() é chamando quando o componente é desmontado da tela e por exemplo, onde podemos remover eventListener do javascript. Esse método seria basicamente realizar um return dentro do useEffect.
+
 export default class Posts extends React.Component {
+
+	componentDidMount() {
+		console.log('Componente foi montado');
+		document.addEventListener('scroll', this.handleScroll);
+	};
+
+	componentWillUnmount() {
+		console.log('Componente foi desmontando');
+		document.removeEventListener('scroll', this.handleScroll);
+	};
+
+	handleScroll() {
+		console.log('scrollando...');
+	};	
 
 	render() {
 
