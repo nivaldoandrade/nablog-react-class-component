@@ -2,21 +2,36 @@ import React from 'react';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
-
 import { Button } from './styles';
 
-export default class ToggleTheme extends React.Component {
+function HOC(ComponentToggleTheme) {
+	return class Componet extends React.Component {
+		render() {
+			return (
+				<ThemeContext.Consumer>
+					{(value) => (
+						<ComponentToggleTheme {...value}/>
+					)}
+				</ThemeContext.Consumer>
+			)
+		}
+	}
+}
+
+class ToggleTheme extends React.Component {
+	componentDidUpdate(prevProps, prevState) {
+		if(this.props.theme !== prevProps.theme) {
+			console.log('ToogleThemeComponent','O theme mudou...');
+		};
+	};
+
 	render () {
 		return (
-			<ThemeContext.Consumer>
-				{({theme, handleChangeToggleTheme}) => (
-					<Button
-						onClick={handleChangeToggleTheme}
-					>
-						{theme === 'dark' ? '🌚' : '🌝'}
-					</Button>
-				)}
-			</ThemeContext.Consumer>
+				<Button onClick={this.props.handleChangeToggleTheme}>
+					{this.props.theme === 'dark' ? '🌚' : '🌝'}
+				</Button>
 		)
 	}
 }
+
+export default HOC(ToggleTheme);
