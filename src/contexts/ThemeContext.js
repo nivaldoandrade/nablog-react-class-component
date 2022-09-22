@@ -10,6 +10,12 @@ export default class ThemeContextProvider extends React.Component {
 		theme: JSON.parse(localStorage.getItem('@nablog:theme')) || 'dark'
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		if(prevState.theme !== this.state.theme) {
+			console.log('O theme mudou...');
+		};
+	} 
+
 	handleChangeToggleTheme = () => {
 		this.setState(prevState => ({
 			theme: prevState.theme === 'dark' ? 'light' : 'dark'
