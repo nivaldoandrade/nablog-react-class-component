@@ -7,13 +7,17 @@ export const ThemeContext = createContext({});
 
 export default class ThemeContextProvider extends React.Component {
 	state = {
-		theme: 'dark'
+		theme: JSON.parse(localStorage.getItem('@nablog:theme')) || 'dark'
 	}
 
 	handleChangeToggleTheme = () => {
 		this.setState(prevState => ({
 			theme: prevState.theme === 'dark' ? 'light' : 'dark'
-		}));
+		}), 
+			() => {
+				localStorage.setItem('@nablog:theme',JSON.stringify(this.state.theme))
+			}
+		);
 	}
 
 	render() {
