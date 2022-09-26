@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
-import ToggleTheme from '../ToggleTheme';
+import React from 'react';
 
-import { Container, Title, Icon } from './styles';
+import ToggleTheme from '../ToggleTheme';
+import { Navbar } from '../Navbar';
+
+import { Container, Title, NavbarContent } from './styles';
 
 //useEffect(() => {}) é executado a cada renderização, e para temos o mesmo efeito em class component é só colocar a function dentro do render().
 //useEffect(() => {}, []) é executado na primeira renderização, e para temos o mesmo efeito em class componet é só utilizar o componentDidMount().
@@ -52,8 +54,11 @@ export default class Header extends React.Component {
 			<Container>
 				{/* {undefined.map(item => item)} */}
 				<Title>{title}</Title>
+				<NavbarContent>
+					<Navbar />
+				</NavbarContent>
 				<ToggleTheme />
-				<button onClick={this.handleChangeState}>Mudar o titulo</button>
+				{/* <button onClick={this.handleChangeState}>Mudar o titulo</button> */}
 			</Container>
 		)
 	}

@@ -12,4 +12,6 @@ export const Container = styled.header`
 
 export const Title = styled.h1``;
 
-export const Icon = styled.button``;
+export const NavbarContent = styled.div`
+
+`;
