@@ -1,7 +1,9 @@
 import React from 'react';
+
+import Routes from './routes';
+
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Posts from './components/Posts';
 
 import ThemeContextProvider from './contexts/ThemeContext';
 
@@ -22,7 +24,7 @@ export default class App extends React.Component {
 		return (
 			<ThemeContextProvider>
 					<Header title="NaBlogProps"/>
-					<Posts />
+					<Routes />
 					<Footer />
 					<GlobalStyle />
 			</ThemeContextProvider>
