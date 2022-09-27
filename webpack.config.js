@@ -5,6 +5,7 @@ module.exports = {
 	mode: 'development',
 	entry: path.resolve(__dirname, "src", "index.js"),
 	output: {
+		publicPath: '/',
 		path: path.resolve(__dirname, "build"),
 		filename: "bundler[hash].js",
 		clean: true
